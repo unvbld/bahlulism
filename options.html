@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Options - Bahlul Censorship</title>
+  <style>body{font-family:Segoe UI,Roboto,Arial;padding:18px;max-width:640px}label{display:block;margin:12px 0}input[type=text]{width:100%}</style>
+</head>
+<body>
+  <h2>Options</h2>
+  <label>Enabled: <input type="checkbox" id="enabled"></label>
+  <label>Threshold (distance): <input type="number" id="threshold" step="0.01" min="0" max="1"></label>
+  <label>Trigger keywords (comma separated): <input type="text" id="keywords"></label>
+  <button id="save">Save</button>
+  <div id="status" style="margin-top:8px;color:#666"></div>
+  <h3 style="margin-top:18px">Detection logs (recent)</h3>
+  <div id="logs" style="max-height:200px;overflow:auto;background:#f8f8f8;padding:8px;border-radius:6px;margin-top:6px;font-size:13px"></div>
+  <button id="clearLogs" style="margin-top:8px">Clear logs</button>
+  <h3 style="margin-top:18px">Distance histogram</h3>
+  <canvas id="histogram" width="480" height="160" style="background:#fff;border:1px solid #e6e6e6;border-radius:6px;display:block;margin-top:8px"></canvas>
+  <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+    <div>Suggested (25th percentile): <strong id="suggestedVal">-</strong></div>
+    <div>Median: <strong id="medianVal">-</strong></div>
+    <button id="applySuggested">Apply suggested threshold</button>
+    <button id="refreshHist">Refresh</button>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
